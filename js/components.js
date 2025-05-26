@@ -1,6 +1,6 @@
 // load-footer.js
 
-fetch('./pages/footer.html')
+fetch('../components/footer.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById('footer_container').innerHTML = data;
@@ -11,7 +11,7 @@ fetch('./pages/footer.html')
 
   
 // load-header.js
-fetch('./pages/header.html')
+fetch('../components/header.html')
   .then(response => response.text())
   .then(data => {
     // Insert the header HTML
