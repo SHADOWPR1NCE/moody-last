@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moody_Statistics</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles/statistics.css" />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+  </head>
+  <body>
+    <!-- header & nav_bar-dynamically loaded -->
+    <div id="header_container"></div>
+
+    <!-- Main -->
+    <!-- Graph That Presents Statistics (currently static) -->
+    <div id="piechart"></div>
+    a
+
+    <!-- footer-dynamically loaded -->
+    <div id="footer_container"></div>
+
+    <script src="./components.js"></script>
+    <script src="./script.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+
+    <script type="text/javascript">
+      // Load google charts
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Draw the chart and set the chart values
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ["Task", "Hours per Day"],
+          ["שמח", 2],
+          ["עצוב", 2],
+          ["כועס", 4],
+          ["חרד", 2],
+          ["רגוע", 8],
+          ["טבעי", 3],
+        ]);
+
+        // Optional; add a title and set the width and height of the chart
+        var options = {
+          title: "ממוצע ההצבעות שלי",
+          width: 550,
+          height: 400,
+          colors: [
+            "#f9df89",
+            "#669be9",
+            "#e84f49",
+            "#9c74ca",
+            "#6ac4a8",
+            "9ca1a4",
+          ],
+        };
+
+        // Display the chart inside the <div> element with id="piechart"
+        var chart = new google.visualization.PieChart(
+          document.getElementById("piechart")
+        );
+        chart.draw(data, options);
+      }
+    </script>
+  </body>
+</html>

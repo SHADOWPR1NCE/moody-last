@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moody</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <!-- header-dynamically loaded -->
+    <div id="header_container"></div>
+
+    <!-- Main -->
+    <main>
+      <!-- Hero -->
+      <div id="hero">
+        <h1>!המסע הרגשי שלך</h1>
+        <p>!רגשותיך הם חלק חשוב ממך ,חשוב להישאר במעקב אחריהם</p>
+      </div>
+    </main>
+
+    <section id="cards_section">
+      <div class="cards">
+        <!-- date (dynamically loaded) -->
+        <p id="date_paragraph">aaaaaa</p>
+        <p class="question_paragraph">?איך אתה מרגיש היום</p>
+
+        <!-- feelings table (currently static)-->
+        <table id="emotion_table">
+          <tr>
+            <td id="td_happy" class="td_emotion">
+              <p><span>😀</span> <br />שמח</p>
+            </td>
+            <td id="td_sad" class="td_emotion">
+              <p><span>🥲</span> <br />עצוב</p>
+            </td>
+            <td id="td_angry" class="td_emotion">
+              <p><span>😡</span> <br />כועס</p>
+            </td>
+          </tr>
+          <tr>
+            <td id="td_anxious" class="td_emotion">
+              <p><span>😰</span> <br />חרד</p>
+            </td>
+            <td id="td_calm" class="td_emotion">
+              <p><span>😌</span> <br />רגוע</p>
+            </td>
+            <td id="td_netural" class="td_emotion">
+              <p><span>😐</span> <br />טבעי</p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <!-- input for details about emotions -->
+        <p id="notes_paragraph">הערה (רשות)</p>
+        <br />
+        <div style="text-align: right">
+          <input dir="rtl" id="notes_input" name="notes_input" type="text" />
+        </div>
+      </div>
+      <!-- feeling summary -->
+      <div class="cards">
+        <p id="responseText"></p>
+        <p id="insight_paragraph">תובנה רגשית</p>
+        <p style="text-align: right">
+          הנוף הרגשי שלך היה מגוון למדי לאחרונה, הגיוון הזה ברגשות הוא חלק טבעי
+          מהחוויה האנושית
+          <br />
+          .שים לב למעברים בין רגשות כדי להבין טוב יותר את הגורמים שמפעילים אותם
+        </p>
+      </div>
+    </section>
+
+    <!-- footer-dynamically loaded -->
+    <div id="footer_container"></div>
+
+    <script src="./components.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+body {
+  background-color: lightgray;
+}
+#div1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 2rem 2rem 0;
+}
+
+#div2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 35px;
+}
+#div3 {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  row-gap: 5px;
+  column-gap: 1.73rem;
+}
+
+#calendar_container {
+  border: 1px solid black;
+  margin: 0 2rem;
+}
+
+#calendar_navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.75rem;
+}
+
+.grid_item {
+  background-color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+}
+
+#main_calendar {
+  width: 40%;
+
+  text-align: center;
+}
+
+#Days_Of_The_Week {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #899499;
+}
