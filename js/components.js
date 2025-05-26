@@ -9,6 +9,7 @@ fetch('./pages/footer.html')
     console.error('שגיאה בטעינת הפוטר:', error);
   });
 
+  
 // load-header.js
 fetch('./pages/header.html')
   .then(response => response.text())
