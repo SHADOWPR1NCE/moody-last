@@ -74,3 +74,32 @@ async function askCohere(prompt) {
           throw new Error(`Cohere error: ${err.message}`);
       }
     }
+
+function showAbout() {
+  const modal = document.getElementById('aboutModal');
+  const overlay = document.getElementById('aboutOverlay');
+  modal.style.display = 'block';
+  overlay.style.display = 'block';
+  // Add small delay to ensure display:block is applied before adding show class
+  setTimeout(() => {
+    modal.classList.add('show');
+  }, 10);
+}
+
+function hideAbout() {
+  const modal = document.getElementById('aboutModal');
+  const overlay = document.getElementById('aboutOverlay');
+  modal.classList.remove('show');
+  // Wait for transition to complete before hiding
+  setTimeout(() => {
+    modal.style.display = 'none';
+    overlay.style.display = 'none';
+  }, 300);
+}
+
+// Add to your existing script section
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    hideAbout();
+  }
+});
