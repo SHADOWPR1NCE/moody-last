@@ -43,7 +43,7 @@ ul {
   list-style-type: none;
 }
 
-#current_page {
+.current_page {
   background-color: #deb887;
   border-radius: 5px;
   width: 20rem;

@@ -14,25 +14,24 @@ fetch('../components/footer.html')
 fetch('../components/header.html')
   .then(response => response.text())
   .then(data => {
-    // Insert the header HTML
     document.getElementById('header_container').innerHTML = data;
     
-    // After inserting the header, set the current page active state
-    const currentPath = window.location.pathname;
-    
-    // Clear any existing current_page attributes
+    // קבל את הנתיב הנוכחי ונקה אותו
+    const currentPath = window.location.pathname.split('/').pop().toLowerCase();
+
     const navLinks = document.querySelectorAll('#header_container nav ul li a');
     navLinks.forEach(link => {
-      link.removeAttribute('id');
-    });
-    
-    // Set the current page attribute
-    navLinks.forEach(link => {
-      const linkPath = link.getAttribute('href');
+      // נקה את הנתיב של הקישור
+      const linkPath = link.getAttribute('href').split('/').pop().toLowerCase();
+      
+      // הסר קודם את ה-class מכל הקישורים
+      link.classList.remove('current_page');
+      
+      // בדוק אם זה העמוד הנוכחי
       if (currentPath === linkPath || 
-          (currentPath === '/' && linkPath === '/index.html') ||
-          currentPath.endsWith(linkPath)) {
-        link.setAttribute('id', 'current_page');
+          (currentPath === '' && linkPath === 'index.html') ||
+          (currentPath === 'index.html' && linkPath === '')) {
+        link.classList.add('current_page');
       }
     });
   })
