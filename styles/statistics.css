@@ -1,11 +1,26 @@
 body {
-  background-color: lightgray;
+  background: radial-gradient(
+    circle at 80% 20%,
+    #a89f91 0%,
+    #bdb6ad 50%,
+    #7c7366 100%
+  );
 }
 
 #piechart {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 45%; /* שינוי מ-50% ל-45% */
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  width: 800px;
+  height: 600px;
+  background: rgba(255, 255, 255, 0.95); /* רקע לבן שקוף */
+  border-radius: 15px; /* פינות מעוגלות */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* צל עדין */
+  backdrop-filter: blur(10px); /* אפקט טשטוש */
 }
