@@ -20,12 +20,24 @@ function drawChart() {
     width: 750,
     height: 550,
     colors: [
-      "#f9df89", // שמח - צהוב
-      "#669be9", // עצוב - כחול
-      "#e84f49", // כועס - אדום
-      "#9c74ca", // חרד - סגול
-      "#ffc0cb", // מתרגש - ורוד בהיר יותר
-      "#9370db", // מקנא - סגול בינוני
+      getComputedStyle(document.documentElement)
+        .getPropertyValue("--color-happy")
+        .trim(),
+      getComputedStyle(document.documentElement)
+        .getPropertyValue("--color-sad")
+        .trim(),
+      getComputedStyle(document.documentElement)
+        .getPropertyValue("--color-angry")
+        .trim(),
+      getComputedStyle(document.documentElement)
+        .getPropertyValue("--color-anxious")
+        .trim(),
+      getComputedStyle(document.documentElement)
+        .getPropertyValue("--color-excited")
+        .trim(),
+      getComputedStyle(document.documentElement)
+        .getPropertyValue("--color-envy")
+        .trim(),
     ],
     fontSize: 16,
     titleTextStyle: {

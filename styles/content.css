@@ -13,11 +13,11 @@ body {
   margin: 0;
   padding: 0;
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* לתמיכה בספארי */
+  -webkit-backdrop-filter: blur(10px);
 }
 
 main {
-  flex: 1 0 auto; /* שינוי כאן */
+  flex: 1 0 auto;
   margin-bottom: 2rem;
   position: relative;
   z-index: 1;

@@ -44,7 +44,12 @@ ul {
 }
 
 .current_page {
-  background-color: #deb887;
+  background: radial-gradient(
+    circle at 80% 20%,
+    #daa520 0%,
+    /* metallic gold */ #cd853f 50%,
+    /* metallic bronze */ #b8860b 100% /* darker bronze */
+  );
   border-radius: 5px;
   width: 20rem;
   font-size: 1.75rem;
