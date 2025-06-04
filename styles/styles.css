@@ -95,26 +95,31 @@ p {
 }
 
 .cards {
-  margin: 0;
-  padding: 0;
-  width: 50%;
-  border: 1px solid black;
-  border-radius: 5px;
-  box-sizing: border-box;
-  display: inline-block;
-  padding: 25px;
-  margin: 10px;
-  text-align: center;
-  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
-  border-radius: 15px;
-  box-shadow: 
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 15px;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 25px;
+    margin: 10px;
+    text-align: center;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+    border-radius: 15px;
+    padding: 25px;
+    margin: 10px;
+    box-shadow: 
         0 4px 15px rgba(0,0,0,0.1),
         inset 0 0 20px rgba(222, 184, 135, 0.1);
 }
 
+/* Remove hover effect */
 .cards:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transform: none;
+    box-shadow: 
+        0 4px 15px rgba(0,0,0,0.1),
+        inset 0 0 20px rgba(222, 184, 135, 0.1);
 }
 
 #cards_section {
@@ -157,6 +162,7 @@ p {
 }
 
 .question_paragraph::before {
+    content: '?';
     position: absolute;
     right: 0;
     color: #deb887;
@@ -176,53 +182,106 @@ p {
 }
 
 .td_emotion {
-  border: 1px solid black;
+  border: none;
+  padding: 15px 10px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+  box-shadow: 
+        0 4px 15px rgba(0,0,0,0.1),
+        inset 0 0 10px rgba(255,255,255,0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 8px;
   padding: 5px 0px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: none;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  min-height: 80px;
-  width: 33.33%;
+  transform-origin: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .td_emotion:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 
-        0 8px 20px rgba(0,0,0,0.15),
-        inset 0 0 15px rgba(255,255,255,0.5);
+    transform: translateY(-5px);
+    box-shadow: 
+        0 8px 25px rgba(0,0,0,0.15),
+        inset 0 0 15px rgba(255,255,255,0.8);
+}
+
+.td_emotion:active {
+    transform: scale(0.95);
+}
+
+.td_emotion::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 70%);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.td_emotion:active::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.td_emotion.selected {
+    animation: selectPulse 0.5s ease-out;
+    box-shadow: 
+        0 0 0 3px rgba(44, 62, 80, 0.3),
+        inset 0 0 20px rgba(255,255,255,0.5);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes selectPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
 .td_emotion span {
-  font-size: 2rem;
-  display: block;
-  margin-bottom: 5px;
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    transition: transform 0.3s ease;
 }
 
+.td_emotion:hover span {
+    transform: scale(1.1);
+}
+
+/* עדכון צבעי הרקע עם גרדיאנטים */
 #td_happy {
-  background-color: #f9df89;
+    background: linear-gradient(145deg, #f9df89, #ffd154);
 }
 
 #td_sad {
-  background-color: #669be9;
+    background: linear-gradient(145deg, #669be9, #4a7fd6);
 }
 
 #td_angry {
-  background-color: #e84f49;
+    background: linear-gradient(145deg, #e84f49, #d13b35);
 }
 
 #td_anxious {
-  background-color: #9c74ca;
+    background: linear-gradient(145deg, #9c74ca, #8655b9);
 }
 
 #td_calm {
-  background-color: #6ac4a8;
-  border-color: #000000;
-  border-width: 1px;
+    background: linear-gradient(145deg, #6ac4a8, #4daf8f);
 }
 
 #td_netural {
-  background-color: #9ca1a4;
+    background: linear-gradient(145deg, #9ca1a4, #7f8487);
 }
 
 table {

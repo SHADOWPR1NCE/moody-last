@@ -103,3 +103,15 @@ document.addEventListener('keydown', function(event) {
     hideAbout();
   }
 });
+
+document.querySelectorAll('.td_emotion').forEach(td => {
+    td.addEventListener('click', function() {
+        // Remove 'selected' class from all emotions
+        document.querySelectorAll('.td_emotion').forEach(el => {
+            el.classList.remove('selected');
+        });
+        
+        // Add 'selected' class to clicked emotion
+        this.classList.add('selected');
+    });
+});
