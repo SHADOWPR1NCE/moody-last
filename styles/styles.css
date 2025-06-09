@@ -196,6 +196,7 @@ p {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  animation: none; /* הוסף שורה זו */
 }
 
 .td_emotion:hover {
