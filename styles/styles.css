@@ -58,13 +58,13 @@ ul {
   padding: 5px;
 }
 
-/* a:hover {
+.nav_links:hover {
   background-color: white;
   border-radius: 5px;
   width: 15rem;
   font-size: 1.5rem;
   padding: 3.5px;
-} */
+}
 
 /* font-settings */
 
@@ -206,11 +206,11 @@ footer {
   border-radius: 4px;
 }
 
-/* .link-hover {
+.link-hover {
   background-color: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-} */
+}
 
 /* Media Queries for responsiveness */
 @media screen and (max-width: 768px) {
