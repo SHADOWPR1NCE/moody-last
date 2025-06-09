@@ -4,9 +4,9 @@ body {
   min-height: 100vh;
   background: radial-gradient(
     circle at 80% 20%,
-    #a89f91 0%,
-    #bdb6ad 50%,
-    #7c7366 100%
+    var(--blue-50) 0%,
+    var(--blue-200) 50%,
+    var(--blue-400) 100%
   );
   position: relative;
   overflow-x: hidden;
@@ -27,14 +27,14 @@ main {
   padding: 20px;
   margin: 0 auto;
   max-width: 1400px;
-  background: rgba(255, 255, 255, 0.95); /* הגדלת האטימות מעט */
+  background: var(--blue-overlay-light);
   border-radius: 15px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px var(--blue-overlay-dark);
   margin-top: 2rem;
-  margin-bottom: 2rem; /* הקטנת המרווח */
+  margin-bottom: 2rem;
   position: relative;
   z-index: 1;
+  border: 1px solid var(--blue-overlay-medium);
 }
 
 .content-grid {
@@ -48,14 +48,14 @@ main {
   background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 15px var(--blue-overlay-dark);
   transition: all 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--blue-300);
 }
 
 .content-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 25px rgba(23, 107, 135, 0.2); /* 176B87 shadow */
 }
 
 .thumbnail {
@@ -90,39 +90,31 @@ main {
 }
 
 .video-button {
-  background-color: #ff4444;
-  color: white;
+  background-color: var(--blue-700);
+  color: var(--blue-50);
 }
 
 .article-button {
-  background-color: #4caf50;
+  background-color: var(--blue-400);
   color: white;
 }
 
-.content-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.content-button i {
-  font-size: 1.1em;
-}
-
 .video-button:hover {
-  background-color: #ff2222;
+  background-color: var(--blue-800);
 }
 
 .article-button:hover {
-  background-color: #45a049;
+  background-color: var(--blue-300);
 }
+
 
 /* Footer Styles */
 #footer_container {
   width: 100%;
   margin-top: auto;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(238, 245, 255, 0.9); /* EEF5FF with opacity */
   backdrop-filter: blur(8px);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(23, 107, 135, 0.1); /* 176B87 border */
   padding: 1rem 0;
   position: relative;
   z-index: 2;

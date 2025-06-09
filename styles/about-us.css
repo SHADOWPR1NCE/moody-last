@@ -1,11 +1,12 @@
 body {
   background: radial-gradient(
     circle at 80% 20%,
-    #a89f91 0%,
-    #bdb6ad 50%,
-    #7c7366 100%
+    var(--blue-50) 0%,
+    var(--blue-200) 50%,
+    var(--blue-400) 100%
   );
 }
+
 .container {
   position: absolute;
   left: 50%;
@@ -13,4 +14,6 @@ body {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   font-size: 2rem;
+  background: var(--blue-overlay-light);
+  box-shadow: 0 8px 32px var(--blue-overlay-dark);
 }

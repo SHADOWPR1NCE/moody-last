@@ -1,8 +1,28 @@
 body {
   background: radial-gradient(
     circle at 80% 20%,
-    #a89f91 0%,
-    #bdb6ad 50%,
-    #7c7366 100%
+    var(--blue-50) 0%,
+    var(--blue-200) 50%,
+    var(--blue-400) 100%
   );
+}
+
+.tip-card {
+  background: var(--blue-50);
+  border: 1px solid var(--blue-200);
+  box-shadow: 0 4px 15px var(--blue-overlay-dark);
+}
+
+.tip-card:hover {
+  background: var(--blue-100);
+  border-color: var(--blue-300);
+}
+
+.tip-button {
+  background: var(--blue-600);
+  color: var(--blue-50);
+}
+
+.tip-button:hover {
+  background: var(--blue-700);
 }

@@ -1,11 +1,12 @@
 body {
   background: radial-gradient(
     circle at 80% 20%,
-    #a89f91 0%,
-    #bdb6ad 50%,
-    #7c7366 100%
+    var(--blue-50) 0%,
+    var(--blue-200) 50%,
+    var(--blue-400) 100%
   );
 }
+
 #div1 {
   display: flex;
   flex-direction: column;
@@ -29,12 +30,8 @@ body {
 }
 
 #calendar_container {
-  background: rgba(201, 195, 187, 0.95); /* בהיר יותר מהקודם */
-  border-radius: 15px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  margin: 0 2rem;
-  padding: 2rem;
+  background: var(--blue-overlay-light);
+  box-shadow: 0 8px 32px var(--blue-overlay-dark);
 }
 
 #calendar_navigation {
@@ -46,10 +43,17 @@ body {
 }
 
 .grid_item {
-  background-color: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 5px;
+  background: var(--blue-100);
+  border: 1px solid var(--blue-300);
+}
+
+.grid_item:hover {
+  background: var(--blue-200);
+}
+
+.selected_date {
+  background: var(--blue-400) !important;
+  color: var(--blue-50);
 }
 
 #main_calendar {
@@ -61,7 +65,7 @@ body {
 #Days_Of_The_Week {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  color: #635d54;
+  color: #654520;
   font-weight: 500;
   margin: 0.8rem 0;
   width: 100%;

@@ -10,9 +10,9 @@
 body {
   background: radial-gradient(
     circle at 80% 20%,
-    #a89f91 0%,
-    #bdb6ad 50%,
-    #7c7366 100%
+    var(--blue-50) 0%,
+    var(--blue-200) 50%,
+    var(--blue-400) 100%
   );
 }
 
@@ -28,13 +28,8 @@ body {
   margin: 2rem auto;
   width: 800px;
   height: 600px;
-  background: rgba(
-    255,
-    255,
-    255,
-    0.85
-  ); /* Changed opacity from 0.75 to 0.85 for better readability */
+  background: var(--blue-overlay-light);
   border-radius: 15px; /* פינות מעוגלות */
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* צל עדין */
+  box-shadow: 0 8px 32px var(--blue-overlay-dark); /* צל עדין */
   backdrop-filter: blur(10px); /* אפקט טשטוש */
 }
