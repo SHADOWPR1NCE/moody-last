@@ -28,25 +28,23 @@ body {
 }
 
 .main-title {
-  color: white;
+  color: black;
   font-size: 8rem;
   font-weight: 800;
   background: linear-gradient(
     120deg,
-    rgba(255, 255, 255, 0.9),
-    rgba(255, 255, 255, 0.7)
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.7)
   );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
   animation: titleFloat 3s ease-in-out infinite;
-  text-shadow: 0 0 40px rgba(255, 255, 255, 0.8),
-    0 0 60px rgba(255, 255, 255, 0.6), 0 0 80px rgba(255, 255, 255, 0.4);
   letter-spacing: 2px;
-  text-shadow: 2px 2px 8px electricblue, 0 0 20px rgba(255, 255, 255, 0.5),
-    0 0 40px rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 2px 4px rgba(87, 75, 75, 0.6);
 }
+
 
 .tips-container {
   display: grid;
@@ -129,6 +127,7 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 900;
+  opacity: 0.3;
 }
 
 .card-content h2 {
@@ -239,4 +238,8 @@ body {
   .card-content h2 {
     font-size: 1.8rem;
   }
+}
+
+footer {
+  position: sticky !important; 
 }

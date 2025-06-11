@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Moody_Diary</title>
     <link rel="stylesheet" href="../styles/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
     <link rel="stylesheet" href="../styles/diary.css" />
   </head>
   <body>
@@ -18,123 +14,29 @@
     <!-- Main -->
     <main dir="rtl">
       <div id="div1">
-        <!-- Emotional Calendar(currently static)  -->
         <h1>יומן רגשות</h1>
-        <p>תעקוב ותמחיש את המסע הרגשי שלך</p>
       </div>
       <section id="calendar_container">
-        <h2>תצוגה חודשית</h2>
-        <p>לחץ על מנת להוסיף או לערוך את רגשותיך</p>
         <div id="div2">
           <div id="main_calendar">
             <div id="calendar_navigation">
-              <div class="nav_arrows"><h1>➡️</h1></div>
-              <div>May,2025</div>
-              <div class="nav_arrows"><h1>⬅️</h1></div>
+                <div class="nav-link">
+                    <span class="calendar-arrow" onclick="nextMonth()">→</span>
+                    <span id="current-month"></span>
+                    <span class="calendar-arrow" onclick="previousMonth()">←</span>
+                </div>
             </div>
             <div id="Days_Of_The_Week">
-              <p>Sun</p>
-              <p>Mon</p>
-              <p>Tue</p>
-              <p>Wed</p>
-              <p>Thu</p>
-              <p>Fri</p>
-              <p>Sat</p>
+              <p>ראשון</p>
+              <p>שני</p>
+              <p>שלישי</p>
+              <p>רביעי</p>
+              <p>חמישי</p>
+              <p>שישי</p>
+              <p>שבת</p>
             </div>
             <div id="div3">
-              <div class="grid_item">
-                <h1>😄 <br />1</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😠 <br />3</h1>
-              </div>
-              <div class="grid_item">
-                <h1>🥲 <br />2</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😐 <br />4</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😔 <br />3</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😩 <br />5</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😣 <br />1</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😄 <br />1</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😠 <br />3</h1>
-              </div>
-              <div class="grid_item">
-                <h1>🥲 <br />2</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😐 <br />4</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😔 <br />3</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😩 <br />5</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😣 <br />1</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😄 <br />1</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😠 <br />3</h1>
-              </div>
-              <div class="grid_item">
-                <h1>🥲 <br />2</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😐 <br />4</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😔 <br />3</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😩 <br />5</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😣 <br />1</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😄 <br />1</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😠 <br />3</h1>
-              </div>
-              <div class="grid_item">
-                <h1>🥲 <br />2</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😐 <br />4</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😔 <br />3</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😩 <br />5</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😣 <br />1</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😄 <br />1</h1>
-              </div>
-              <div class="grid_item">
-                <h1>😠 <br />3</h1>
-              </div>
-              <div class="grid_item">
-                <h1>🥲 <br />2</h1>
-              </div>
+              <!-- הימים יתווספו דינמית דרך JavaScript -->
             </div>
           </div>
         </div>
@@ -146,5 +48,43 @@
 
     <script src="../js/components.js"></script>
     <script src="../js/script.js"></script>
+    <script src="../js/calendar.js"></script>
+    <script src="../js/theme.js"></script>
+
+    <!-- Add this before closing body tag -->
+    <div id="emojiModal" class="modal">
+      <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>בחר רגש</h2>
+          <div class="emoji-grid">
+              <div class="emoji-option" data-emoji="😀">😀</div>
+              <div class="emoji-option" data-emoji="😢">😢</div>
+              <div class="emoji-option" data-emoji="😡">😡</div>
+              <div class="emoji-option" data-emoji="😰">😰</div>
+              <div class="emoji-option" data-emoji="🤩">🤩</div>
+              <div class="emoji-option" data-emoji="😤">😤</div>
+          </div>
+      </div>
+    </div>
+    <!-- Add this before closing body tag -->
+    <div id="statsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+        </div>
+    </div>
+    <div id="page_navigation">
+        <a href="diary.html" class="nav-item">
+            <img src="../images/icons/calendar.png" alt="יומן" class="nav-icon">
+            <span>יומן רגשות</span>
+        </a>
+        <a href="analysis.html" class="nav-item">
+            <img src="../images/icons/chart.png" alt="ניתוח" class="nav-icon">
+            <span>ניתוח נתונים</span>
+        </a>
+        <a href="settings.html" class="nav-item">
+            <img src="../images/icons/settings.png" alt="הגדרות" class="nav-icon">
+            <span>הגדרות</span>
+        </a>
+    </div>
   </body>
 </html>

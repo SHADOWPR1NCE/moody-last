@@ -8,9 +8,8 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
   </head>
-
+  
   <body>
     <!-- header-dynamically loaded -->
     <div id="header_container"></div>
@@ -27,7 +26,7 @@
     <section id="cards_section">
       <div class="cards">
         <!-- date (dynamically loaded) -->
-        <p id="date_paragraph">TEST2</p>
+        <p id="date_paragraph">aaaaaa</p>
         <p class="question_paragraph">?איך אתה מרגיש היום</p>
 
         <!-- feelings table (currently static)-->
@@ -37,7 +36,7 @@
               <p><span>😀</span> <br />שמח</p>
             </td>
             <td id="td_sad" class="td_emotion">
-              <p><span>🥲</span> <br />עצוב</p>
+              <p><span>😢</span> <br />עצוב</p>
             </td>
             <td id="td_angry" class="td_emotion">
               <p><span>😡</span> <br />כועס</p>
@@ -45,13 +44,13 @@
           </tr>
           <tr>
             <td id="td_anxious" class="td_emotion">
-              <p><span>😰</span> <br />חרד</p>
+              <p><span>😰</span> <br />פחד</p>
             </td>
             <td id="td_calm" class="td_emotion">
-              <p><span>😌</span> <br />רגוע</p>
+              <p><span>🤩</span> <br />מתרגש</p>
             </td>
             <td id="td_netural" class="td_emotion">
-              <p><span>😐</span> <br />טבעי</p>
+              <p><span>😤</span> <br />קנאה</p>
             </td>
           </tr>
         </table>
@@ -76,10 +75,36 @@
       </div>
     </section>
 
+    
+
     <!-- footer-dynamically loaded -->
     <div id="footer_container"></div>
 
+    <div class="about-container">
+      <button class="about-button" onclick="showAbout()">אודות Moody</button>
+    </div>
+
+    <div class="about-overlay" id="aboutOverlay" onclick="hideAbout()"></div>
+    <div class="about-modal" id="aboutModal">
+      <span class="close-button" onclick="hideAbout()">×</span>
+      <h2>אודות Moody</h2>
+      <p>Moody הוא מרחב דיגיטלי שנולד מתוך רצון אמיתי להקשיב לרגשות של בני נוער, ולהעניק להם מקום בטוח, אישי ומכיל. אנחנו מאמינים שרגשות הם חלק בלתי נפרד מהחיים — גם בבית הספר — וכשנותנים להם הכרה, הכל הופך לברור, רגוע ומאוזן יותר.</p>
+      <br>
+      <p>המטרה שלנו היא להעניק לתלמידים כלים פשוטים ונגישים להתבוננות פנימית, מעקב רגשי, ויצירת הרגלים של מודעות עצמית. באמצעות ממשק ידידותי, יומן רגשות אישי ותובנות יומיומיות – moodi מאפשר להכיר את עצמך לעומק, להבין מה עובר עליך, וללמוד איך להתמודד.</p>
+    </div>
+
     <script src="../js/components.js"></script>
     <script src="../js/script.js"></script>
+    <script>
+      function showAbout() {
+        document.getElementById('aboutModal').style.display = 'block';
+        document.getElementById('aboutOverlay').style.display = 'block';
+      }
+
+      function hideAbout() {
+        document.getElementById('aboutModal').style.display = 'none';
+        document.getElementById('aboutOverlay').style.display = 'none';
+      }
+    </script>
   </body>
 </html>

@@ -7,23 +7,24 @@ date_paragraph.innerText = `${today.getDate()}/${
 }/${today.getFullYear()}`;
 
 async function API() {
-   // alert(askChatGPT("whas the biggest country in th world? answer in hebrew"));
-        const prompt = "How costs humster? answer in hebrew";
-        const responseElement = document.getElementById('responseText');
+  // alert(askChatGPT("whas the biggest country in th world? answer in hebrew"));
+  const prompt = "How costs humster? answer in hebrew";
+  const responseElement = document.getElementById("responseText");
 
- //       responseElement.textContent = "Thinking...";
+  //       responseElement.textContent = "Thinking...";
 
-        try {
-//          const answer = await askChatGPT(prompt);
-          const answer = await askCohere(prompt);
-          responseElement.textContent = answer;
-          //alert(answer);
-        } catch (error) {
-          // responseElement.textContent = "Error: " + error.message;
+  try {
+    //          const answer = await askChatGPT(prompt);
+    const answer = await askCohere(prompt);
+    responseElement.textContent = answer;
+    //alert(answer);
+  } catch (error) {
+    // responseElement.textContent = "Error: " + error.message;
   }
 }
 async function askChatGPT(prompt) {
-  const apiKey = "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"; // Replace with your actual API key
+  const apiKey =
+    "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"; // Replace with your actual API key
 
   const response = await fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
@@ -47,30 +48,74 @@ async function askChatGPT(prompt) {
 }
 
 async function askCohere(prompt) {
-      const apiKey = 'fhsxP90vLVRL42pPglN772MMVN1yMAYRX246HgAQ'; // Replace with your Cohere key
+  const apiKey = "fhsxP90vLVRL42pPglN772MMVN1yMAYRX246HgAQ"; // Replace with your Cohere key
 
-      const url = "https://api.cohere.ai/v1/chat";
-      const body = {
-        message: prompt,
-        model: "command-r-plus", // Latest multilingual chat model
-        temperature: 0.7
-      };
+  const url = "https://api.cohere.ai/v1/chat";
+  const body = {
+    message: prompt,
+    model: "command-r-plus", // Latest multilingual chat model
+    temperature: 0.7,
+  };
 
-      try {
-        const res = await fetch(url, {
-          method: "POST",
-          headers: {
-            "Authorization": `Bearer ${apiKey}`,
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(body)
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    });
+
+    const data = await res.json();
+    const reply = data.text || "No response.";
+    return reply;
+  } catch (err) {
+    throw new Error(`Cohere error: ${err.message}`);
+  }
+}
+
+function showAbout() {
+  const modal = document.getElementById("aboutModal");
+  const overlay = document.getElementById("aboutOverlay");
+  modal.style.display = "block";
+  overlay.style.display = "block";
+  // Add small delay to ensure display:block is applied before adding show class
+  setTimeout(() => {
+    modal.classList.add("show");
+  }, 10);
+}
+
+function hideAbout() {
+  const modal = document.getElementById("aboutModal");
+  const overlay = document.getElementById("aboutOverlay");
+  
+  if (!modal || !overlay) return; // Guard clause for missing elements
+  
+  modal.classList.remove("show");
+  // Wait for transition to complete before hiding
+  setTimeout(() => {
+    modal.style.display = "none";
+    overlay.style.display = "none";
+  }, 300);
+}
+
+// Event listener for Escape key
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    hideAbout();
+  }
+}); // Removed extra newline
+
+// Emotion selection handling
+document.querySelectorAll('.td_emotion').forEach(td => {
+    td.addEventListener('click', function() {
+        // Remove 'selected' class from all emotions
+        document.querySelectorAll('.td_emotion').forEach(el => {
+            el.classList.remove('selected');
         });
-
-        const data = await res.json();
-        const reply = data.text || "No response.";
-        return reply;
-
-      } catch (err) {
-          throw new Error(`Cohere error: ${err.message}`);
-      }
-    }
+        
+        // Add 'selected' class to clicked emotion
+        this.classList.add('selected');
+    });
+}); // Added missing closing parenthesis and bracket
