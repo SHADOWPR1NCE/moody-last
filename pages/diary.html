@@ -6,6 +6,10 @@
     <title>Moody_Diary</title>
     <link rel="stylesheet" href="../styles/styles.css" />
     <link rel="stylesheet" href="../styles/diary.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
   </head>
   <body>
     <!-- header-dynamically loaded -->
@@ -20,11 +24,11 @@
         <div id="div2">
           <div id="main_calendar">
             <div id="calendar_navigation">
-                <div class="nav-link">
-                    <span class="calendar-arrow" onclick="nextMonth()">→</span>
-                    <span id="current-month"></span>
-                    <span class="calendar-arrow" onclick="previousMonth()">←</span>
-                </div>
+              <div class="nav-link">
+                <span class="calendar-arrow" onclick="nextMonth()">→</span>
+                <span id="current-month"></span>
+                <span class="calendar-arrow" onclick="previousMonth()">←</span>
+              </div>
             </div>
             <div id="Days_Of_The_Week">
               <p>ראשון</p>
@@ -54,37 +58,37 @@
     <!-- Add this before closing body tag -->
     <div id="emojiModal" class="modal">
       <div class="modal-content">
-          <span class="close-modal">&times;</span>
-          <h2>בחר רגש</h2>
-          <div class="emoji-grid">
-              <div class="emoji-option" data-emoji="😀">😀</div>
-              <div class="emoji-option" data-emoji="😢">😢</div>
-              <div class="emoji-option" data-emoji="😡">😡</div>
-              <div class="emoji-option" data-emoji="😰">😰</div>
-              <div class="emoji-option" data-emoji="🤩">🤩</div>
-              <div class="emoji-option" data-emoji="😤">😤</div>
-          </div>
+        <span class="close-modal">&times;</span>
+        <h2>בחר רגש</h2>
+        <div class="emoji-grid">
+          <div class="emoji-option" data-emoji="😀">😀</div>
+          <div class="emoji-option" data-emoji="😢">😢</div>
+          <div class="emoji-option" data-emoji="😡">😡</div>
+          <div class="emoji-option" data-emoji="😰">😰</div>
+          <div class="emoji-option" data-emoji="🤩">🤩</div>
+          <div class="emoji-option" data-emoji="😤">😤</div>
+        </div>
       </div>
     </div>
     <!-- Add this before closing body tag -->
     <div id="statsModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-        </div>
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+      </div>
     </div>
     <div id="page_navigation">
-        <a href="diary.html" class="nav-item">
-            <img src="../images/icons/calendar.png" alt="יומן" class="nav-icon">
-            <span>יומן רגשות</span>
-        </a>
-        <a href="analysis.html" class="nav-item">
-            <img src="../images/icons/chart.png" alt="ניתוח" class="nav-icon">
-            <span>ניתוח נתונים</span>
-        </a>
-        <a href="settings.html" class="nav-item">
-            <img src="../images/icons/settings.png" alt="הגדרות" class="nav-icon">
-            <span>הגדרות</span>
-        </a>
+      <a href="diary.html" class="nav-item">
+        <img src="../images/icons/calendar.png" alt="יומן" class="nav-icon" />
+        <span>יומן רגשות</span>
+      </a>
+      <a href="analysis.html" class="nav-item">
+        <img src="../images/icons/chart.png" alt="ניתוח" class="nav-icon" />
+        <span>ניתוח נתונים</span>
+      </a>
+      <a href="settings.html" class="nav-item">
+        <img src="../images/icons/settings.png" alt="הגדרות" class="nav-icon" />
+        <span>הגדרות</span>
+      </a>
     </div>
   </body>
 </html>
