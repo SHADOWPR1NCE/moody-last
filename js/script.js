@@ -89,9 +89,9 @@ function showAbout() {
 function hideAbout() {
   const modal = document.getElementById("aboutModal");
   const overlay = document.getElementById("aboutOverlay");
-  
+
   if (!modal || !overlay) return; // Guard clause for missing elements
-  
+
   modal.classList.remove("show");
   // Wait for transition to complete before hiding
   setTimeout(() => {
@@ -108,14 +108,14 @@ document.addEventListener("keydown", function (event) {
 }); // Removed extra newline
 
 // Emotion selection handling
-document.querySelectorAll('.td_emotion').forEach(td => {
-    td.addEventListener('click', function() {
-        // Remove 'selected' class from all emotions
-        document.querySelectorAll('.td_emotion').forEach(el => {
-            el.classList.remove('selected');
-        });
-        
-        // Add 'selected' class to clicked emotion
-        this.classList.add('selected');
+document.querySelectorAll(".td_emotion").forEach((td) => {
+  td.addEventListener("click", function () {
+    // Remove 'selected' class from all emotions
+    document.querySelectorAll(".td_emotion").forEach((el) => {
+      el.classList.remove("selected");
     });
+
+    // Add 'selected' class to clicked emotion
+    this.classList.add("selected");
+  });
 }); // Added missing closing parenthesis and bracket

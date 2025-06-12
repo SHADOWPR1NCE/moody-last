@@ -38,6 +38,7 @@ nav {
 
 #Logo {
   padding-top: 1px;
+  margin-left: 1rem;
 }
 
 ul {
@@ -80,10 +81,6 @@ ul {
   padding: 3.5px;
 }
 
-main {
-  margin-top: 6rem;
-}
-
 /* font-settings */
 
 a {
@@ -107,13 +104,17 @@ p {
   font-size: 1.25rem;
 }
 
+/* main part */
+
+main {
+  margin-top: 6rem;
+}
+
 #hero {
   margin-top: 4rem;
   margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   text-align: center;
 }
 
@@ -132,16 +133,9 @@ p {
   box-shadow: 0 4px 15px var(--blue-overlay-dark);
 }
 
-/* Remove hover effect
-.cards:hover {
-    transform: none;
-    box-shadow: 0 4px 15px var(--blue-overlay-dark);
-    background: white;  /* Keep background white on hover */
-
 #cards_section {
   display: flex;
   gap: 8px;
-  padding: 0;
   margin: 0;
   padding: 0 20px;
 }
